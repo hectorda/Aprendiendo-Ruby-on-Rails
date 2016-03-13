@@ -1,5 +1,4 @@
 class Article < ActiveRecord::Base
-	#latabla
-	#los campos
-	#escribir métodos
+	validates :title, presence: true
+	validates :body, presence: true
 end

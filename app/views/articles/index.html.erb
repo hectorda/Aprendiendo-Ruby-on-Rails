@@ -6,6 +6,7 @@
 	<table class="table">
 		<thead> 
 			<tr>
+				<th>ID</th>
 				<th>Titulo</th>
 				<th>Cuerpo</th>
 				<th>Visitas</th>
@@ -14,7 +15,8 @@
 		</thead>
 		<tbody>
 		<% @articles.each do |article| %>
-			<tr>				
+			<tr>
+				<td><%= article.id %></td>				
 				<td><%= article.title %></td>
 				<td><%= article.body %> </td>
 				<td><%= article.visits_count %> </td>
