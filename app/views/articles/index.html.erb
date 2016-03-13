@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row pull-right">
+		<%= link_to "Crer articulo", { :controller => :articles, :action => :new }, { class: "btn btn-primary", style: "width: 100%;" } %>
+	</div>
+
+	<table class="table">
+		<thead> 
+			<tr>
+				<th>Titulo</th>
+				<th>Cuerpo</th>
+				<th>Visitas</th>
+				<th>Creado</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @articles.each do |article| %>
+			<tr>				
+				<td><%= article.title %></td>
+				<td><%= article.body %> </td>
+				<td><%= article.visits_count %> </td>
+				<td><%= article.created_at %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+
+	</table>
+	
+</div>
