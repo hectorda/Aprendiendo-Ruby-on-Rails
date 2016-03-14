@@ -2,6 +2,13 @@
 <% unless @article.user.nil? %>
 <p>Escrito por <%= @article.user.email %></p>
 <% end -%>
+
+<div class="control-group">
+	<% @article.categories.each do |category| %>		
+		<%= link_to category.name,category,style:"color:#{category.color};" %>
+	<% end -%>
+</div>
+
 <p>Cuerpo: <%= @article.body %> </p>
 <div>
 <%= image_tag @article.cover.url(:thumb)%>
