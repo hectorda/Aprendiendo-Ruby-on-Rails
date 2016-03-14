@@ -17,18 +17,18 @@
 				<td><%= article.body%></td>
 				<td><%= article.visits_count %> </td>
 				<td><%= article.created_at %> </td>
-				<td><%= link_to article, method: :delete, class: "btn btn-primary" do %>
-				    <i class="glyphicon glyphicon-trash">Eliminar</i>
+				<td>
+					<%= link_to article, method: :get do %>
+				    	<i class="glyphicon glyphicon-eye-open"></i>
 					<% end %>
-					<%= link_to article, method: :get, class: "btn btn-primary" do %>
-				    <i class="glyphicon glyphicon-eye">Ver</i>
+					
+					<%= link_to edit_article_path(article) do %>
+				    	<i class="glyphicon glyphicon-edit"></i>
 					<% end %>
 
-					<%= link_to edit_article_path(article) , class: "btn btn-primary" do %>
-				    <i class="glyphicon glyphicon-edit">Editar</i>
-					<% end %>
-				    
-				    
+					<%= link_to article, method: :delete,:data => {:confirm => "Esta Seguro?"} do %>
+				    	<i class="glyphicon glyphicon-trash"></i>
+					<% end %>					
 				</td>
 			</tr>
 			<% end %>

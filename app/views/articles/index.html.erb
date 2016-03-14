@@ -1,8 +1,5 @@
-<div class="container">
 	<div class="row pull-right">
 		<%= link_to "Crer artículo", { :controller => :articles, :action => :new }, { class: "btn btn-primary", style: "width: 100%;" } %>
 	</div>
 	Hay <%= @articles.count %> articulos actualmente
 	<%= render "table" %>
-	
-</div>

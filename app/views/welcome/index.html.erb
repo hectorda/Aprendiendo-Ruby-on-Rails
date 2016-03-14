@@ -1,12 +1,5 @@
-<div class="container">
-	<div class="row">		
-		<h1>Welcome#index</h1>
-		</div>
-		<div class="row">
-			<p>Find me in app/views/welcome/index.html.erb</p>
-
-		</p>
-
-	</div>
-
-</div>
+<% if user_signed_in? %>
+	<h1>Bienvenido <%= current_user.email %> </h1>
+<%else%>
+	<h1>Bienvenido Anonimo</h1>
+<%end -%>
