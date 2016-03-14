@@ -9,11 +9,12 @@ class ArticlesController < ApplicationController
 	#Get article/:id
 	def show
 		@article.update_visits_count
+		@comment = Comment.new
 	end
 
 	#Get /articles/new
 	def new
-		@article = Article.new;
+		@article = Article.new
 	end
 	#GET /articles/:id/edit
 	def edit

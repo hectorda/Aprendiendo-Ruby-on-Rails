@@ -4,3 +4,14 @@
 <% end -%>
 <p>Cuerpo: <%= @article.body %> </p>
 <p>Visitas: <%= @article.visits_count %></p>
+
+<h3>Comentarios</h3>
+<%= render "comments/form" %>
+<ul id="comments-list">
+	<% @article.comments.each do |comment| %>
+		<li>
+			<%= comment.body %> - <%= comment.user.email %>
+		</li>	
+		<% end -%>
+
+</ul>
