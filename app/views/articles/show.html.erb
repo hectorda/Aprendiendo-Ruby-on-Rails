@@ -3,6 +3,9 @@
 <p>Escrito por <%= @article.user.email %></p>
 <% end -%>
 <p>Cuerpo: <%= @article.body %> </p>
+<div>
+<%= image_tag @article.cover.url(:thumb)%>
+ </div>
 <p>Visitas: <%= @article.visits_count %></p>
 
 <h3>Comentarios</h3>
