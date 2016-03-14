@@ -1,24 +1,3 @@
-<div class="container">	
-	<h1>Crear Artículo</h1>
-	<%= form_for(@article, :html => {:class => 'form-horizontal'}) do |f|%>
-		<% if     @article.errors.any? %>
-			<ul  class="alert alert-danger" style="list-style-type: none">
-			<% @article.errors.full_messages.each do |message|%>
-		        <li><%= message %></li>
-			<% end -%>
-			</ul>
-		<% end -%>		
-		
-	<div class="form-group">
-		<%= f.text_field :title, placeholder: "Titulo",class: "form-control" %>
-	</div>
-	<div class="form-group">
-		<%= f.text_area :body, placeholder: "Escribe el articulo",class: "form-control",style:"height:250px"%>
-	</div>
-	<div class="form-group">
-		<%= f.submit "Guardar",:class => 'btn btn-primary'%>
-	</div>
-
-
-	<% end -%>
+<div class="container">
+	<%= render "form", name: "Crear" %>
 </div>

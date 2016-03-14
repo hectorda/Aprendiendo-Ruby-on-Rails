@@ -3,33 +3,6 @@
 		<%= link_to "Crer artículo", { :controller => :articles, :action => :new }, { class: "btn btn-primary", style: "width: 100%;" } %>
 	</div>
 	Hay <%= @articles.count %> articulos actualmente
-	<table class="table">
-		<thead> 
-			<tr>
-				<th>ID</th>
-				<th>Titulo</th>
-				<th>Cuerpo</th>
-				<th>Visitas</th>
-				<th>Creado</th>
-    			<th width="120px">Acciones</th>
-			</tr>
-		</thead>
-		<tbody>
-		<% @articles.each do |article| %>
-			<tr>
-				<td><%= article.id %></td>				
-				<td><%= article.title %></td>
-				<td><%= article.body%></td>
-				<td><%= article.visits_count %> </td>
-				<td><%= article.created_at %> </td>
-				<td><%= link_to article, method: :delete, class: "btn btn-primary" do %>
-				    <i class="glyphicon glyphicon-trash">Eliminar</i>
-					<% end %>
-				</td>
-			</tr>
-			<% end %>
-		</tbody>
-
-	</table>
+	<%= render "table" %>
 	
 </div>
