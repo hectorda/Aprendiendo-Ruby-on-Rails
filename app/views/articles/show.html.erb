@@ -1,3 +1,6 @@
 <h1>Titulo: <%= @article.title %></h1>
+<% unless @article.user.nil? %>
+<p>Escrito por <%= @article.user.email %></p>
+<% end -%>
 <p>Cuerpo: <%= @article.body %> </p>
 <p>Visitas: <%= @article.visits_count %></p>
